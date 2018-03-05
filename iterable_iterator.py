@@ -39,5 +39,15 @@ def main():
     for car in t:
         print(car)
 
+    print('\n###################\n')
+
+    t2 = Train(5)  # t2 is an iterable
+    # automatically done by 'for'
+    t2_iter = iter(t2)  # t2_iter is an iterator
+    # iterable - an object from which the iter() function (or the .__iter__ method) can build an iterator
+    print(next(t2_iter))
+    print(next(t2_iter))
+    ...  # until StopIteration exception
+
 
 main()
