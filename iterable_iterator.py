@@ -9,11 +9,16 @@ class Train:
     def __init__(self, cars):
         self.cars = cars
 
+    # def __iter__(self):
+    #     return TrainIterator(self.cars)
+    # obsolete
+
     def __iter__(self):
-        return TrainIterator(self.cars)
+        for index in range(self.cars):
+            yield f'car {index}'
 
 
-class TrainIterator:
+class TrainIterator:  # unused
     def __init__(self, cars):
         self.next = 0
         self.last = cars - 1
