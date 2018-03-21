@@ -47,7 +47,7 @@ for char in ascii_lowercase:
 
 
 # second method - with islice and cycle
-catalog = {k: ''.join([v for v, z in zip(islice(cycle(ascii_lowercase), i, None), ascii_lowercase)]) for i, k in enumerate(ascii_lowercase)}
+catalog = {k: ''.join(v for v in islice(cycle(ascii_lowercase), i, i + len(ascii_lowercase))) for i, k in enumerate(ascii_lowercase)}
 
 for k, v in sorted(catalog.items()):
     print(f'{k}: {v}')
